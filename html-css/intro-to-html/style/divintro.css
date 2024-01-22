@@ -1,0 +1,43 @@
+.abox{
+  margin-top: 30px;
+  margin-left: 30px;
+  box-shadow: 0px 0px 10px;
+  display: inline-block;
+  border-radius: 2px;
+  vertical-align: top;
+}
+.durga{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+p,
+.addf{
+  font-family: Arial;
+}
+.headder{
+  margin-top: 5px;
+  margin-left: 6px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.stats{
+  margin-top: 5px;
+  margin-left: 6px;
+  margin-bottom: 0;
+  color: gray;
+}
+.addf{
+  margin-top: 9px;
+  margin-left: 6px;
+  margin-bottom: 8px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 16px;
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}

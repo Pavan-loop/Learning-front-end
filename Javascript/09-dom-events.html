@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: blue;
+}
+#btn-click{
+  font-size: 50px;
+  cursor: pointer;
+}
+</style>
+<body>
+  <div class="container">
+    <button id="btn-click">Click Me!</button>
+  </div>
+
+<script>
+  var btn = document.getElementById('btn-click');
+  var container = document.getElementsByClassName('container');
+  function onClickSpeak(){
+    container.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")";
+  }
+  //btn.onclick = onClickSpeak;
+  btn.addEventListener('click',onClickSpeak);
+</script>
+</body>
+</html>

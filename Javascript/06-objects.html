@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <p>This is the game of rock paper scissors</p>
+  <button onclick="
+    playersPick('Rock');
+  ">ROCK</button>
+
+  <button onclick="
+    playersPick('Paper');
+  ">PAPER</button>
+  <button onclick="
+    playersPick('scissors');
+  ">SCISSOR</button>
+  <button onclick="
+  score.wins = 0;
+  score.losses = 0;
+  score.draws = 0;
+  // we are using removeItem method in localStorage to erase the data in localStorage.
+  localStorage.removeItem('score');
+  ">RESET</button>
+  <script>
+    /*--------------------------User-Defined-Object---------------------------*/
+
+    /*
+    
+    const product = {
+      name : 'PC',
+      price : 300000
+    }
+    console.log(product);
+    // we can also access individual elements in an object
+    console.log(product.name);
+    console.log(product.price);
+    // we can also alter the elements in an object
+    product.name = 'Phone';
+    console.log(product);
+    // we can also add new items into the object
+    product.quantity = 1;
+    console.log(product);
+    //we can delete an item
+    delete product.quantity;
+    console.log(product);
+
+
+    */
+
+    // we can access the value of an object in two ways
+    // dot notation 
+    // Bracket notation 
+
+    product = {
+      name : 'Books',
+      price : 690,
+      // we declare abnormal variable inside a quote 
+      'delivery-time' : '4 days',
+      // nested object
+      ratings : {
+        stars : 4.5,
+        count : 47
+      },
+      // we can also declare a function inside an object
+      fun : function function1(){
+        console.log('Hello Pavan How Are You :)')
+      }
+    };
+    console.log(product.name)
+    
+    // Bracket notation are usually used for a variable that cannot be accesed by dot notation
+    // For Example delivery-time javascript think you want to minus delivery and time
+    // To Prevent this we use Bracket Notation
+
+    //The below code will pop an error
+
+    /* remove the slash below to see the error */
+
+    //console.log(product.delivery-time);
+
+    // To tackel this problem we use bracket notation
+
+    console.log(product['delivery-time']);
+
+    // next we will see how to access the element in nested object
+
+    console.log(product.ratings.stars);
+    console.log(product)
+    console.log(product.ratings)
+
+    // A function inside an object is called a method
+
+    product.fun();
+
+    /*------------------------ Built-In-Object ----------------------------*/
+
+    // JSON 
+    // JSON is similar to JavaScript object with less features.
+    // JSON will not support a function.
+    // JSON is universal it can be understand by many languages.
+    // JSON is morely used to store and transfer the data.
+    // JSON will use double quotes instead of single quotes.
+    // for example {"name" : "Books", "Price" : 46} 
+
+    // First we will convert javaScript object to JSON
+
+    jsonString = JSON.stringify(product);
+    console.log(jsonString);
+
+    // Lets convert JSON back to javaScript Object
+
+    javaScriptObject = JSON.parse(jsonString);
+    console.log(javaScriptObject);
+
+    // localStorage.
+    // localStorage used to store data permanently.
+    // localStorage only takes Strings as an argument.
+    // so we need to use it with JSON to convert into String and back. Using methods like stringify and parse we can do so. 
+    // localStorage object have 3 basic methods. 
+    // localStorage.setItem('1arg','2arg');
+    // localStorage.getItem('1arg');
+    // localStorage.removeItem('1arg');
+    // we are taking rock-paper-scissor as an example to demonstrate localStorage
+
+    // we are retriving data and storing the retrived data in score
+    // again we are coverting string to object using JSON.parse();
+    let score = JSON.parse(localStorage.getItem('score'));
+    let computerChoice = '';
+
+    function playersPick(move){
+      if(move === 'Rock'){
+        pickComputerChoice();
+          result = '';
+          if(computerChoice === 'Rock'){
+            result = 'Tie';
+          } else if(computerChoice === 'Paper'){
+            result = 'You Lossed';
+          } else if(computerChoice == 'scissors'){
+            result = 'You Win';
+          }
+      } else if(move === 'Paper'){
+        pickComputerChoice(); 
+          result = '';
+          if(computerChoice === 'Rock'){
+            result = 'You Win';
+          } else if(computerChoice === 'Paper'){
+            result = 'Tie';
+          }else if(computerChoice === 'scissors'){
+            result = 'You Lossed';
+          }
+      }else if(move === 'scissors'){
+        pickComputerChoice();
+            result = '';
+            if(computerChoice === 'Rock'){
+              result = 'You Lossed';
+            }else if(computerChoice === 'Paper'){
+              result = 'You Win';
+            }else if(computerChoice === 'scissors'){
+              result = 'Tie';
+            }
+      }
+      if(result === 'You Lossed'){
+        score.losses += 1;
+      }else if(result === 'You Win'){
+        score.wins += 1;
+      }else if(result === 'Tie'){
+        score.draws += 1;
+      }
+      // storing the score value permanently using localStorage
+      // since localStorage takes only the string we use JSON.stringify to convert the object into string 
+      localStorage.setItem('score',JSON.stringify(score));
+      alert(`You Choosed ${move} and Computer Choosed ${computerChoice}
+      ${result}
+      Wins: ${score.wins}, Losses: ${score.losses} and Draws: ${score.draws}`);
+    }
+    function pickComputerChoice(){
+
+      const randomNumber = Math.random();
+        if(randomNumber >= 0 && randomNumber < 1/3){
+          computerChoice = 'Rock';
+        } else if(randomNumber >= 1/3 && randomNumber < 2/3){
+          computerChoice = 'Paper';
+        } else if(randomNumber >= 2/3 && randomNumber < 1){
+          computerChoice = 'scissors';
+        }
+    }
+
+    /*----------------------Auto-Box-----------------------------*/
+
+    // javaScript wrap a String inside an object autometically.
+    // By doing so we can use properties and methods for a string.
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    /*-----------------------Some-Interesting-Things-About-Object----------------------------*/
+
+    // objects are references
+    // the objects will not store the values but it will store the memory location of the values
+
+    const object1 = {
+      message : 'Hello BSDK'
+    };
+    
+    // if we copy object1 to object2 it will copy the memory location of the value not the values itself
+    
+    const object2 = object1;
+    console.log(object2);
+
+    // if we alter object1.message to hello lopar object2 also changes 
+     
+    object1.message = 'Hello Lopar';
+    console.log(object2);
+
+    // to understand more about this let us create an object3 that contain same value 
+
+    const object3 = {
+      message : 'Hello Lopar'
+    };
+    // if we compair object3 and object1 it will return false
+    // but if we compair object1 and object2 it will return true
+    // this is because object1 and object2 have same memory location
+    // Remember the object stores the location of the memory not the value
+    console.log('Compairing object1 and object3',object1 === object3);
+    console.log('Compairing object1 and object2',object1 === object2);
+
+    /*---------------------------Destructuring-Property-----------------------------*/
+
+    // How to take a property outside an object and store it in a variable.
+    // There are two ways 
+    const object4 = {
+      message : 'Hello Manya Munushya',
+      Price : 6969
+    };
+
+    // First way (Standard Way)
+    /*const message = object4.message;
+    console.log(message);*/
+
+    // Second way Destructuring way
+    const {message,Price} = object4;
+    console.log(message);
+    console.log(Price);
+
+    /*-----------------------Shorthand-Property-And-Methods---------------------------*/
+    const object5 = {
+      //message : message
+      message,
+      method(){
+        console.log('Wake Up To Reality');
+      }
+    };
+    console.log(object5);
+    object5.method();
+   </script>
+</body>
+</html>

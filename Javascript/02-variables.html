@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+  <style>
+    .show_cart_quantity{
+      padding: 12px;
+      width: 150px;
+      border: none;
+      background-color: #3498DB ;
+      color: white;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .add_to_cart{
+    padding: 12px;
+    background-color: #FFEA00;
+    border: none;
+    margin: 10px;
+    width: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .add_two,.add_three,.reset{
+    padding: 12px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    }
+  .add_two{
+    background-color: #F39C12;
+  }
+  .add_three{
+    background-color: #58D68D;
+  }
+  .reset{
+    color: white;
+    background-color: #E74C3C;
+  }
+  .show_cart_quantity:hover,.add_to_cart:hover,.add_two:hover,.add_three:hover,.reset:hover{
+    opacity: 0.9;
+  }
+
+
+  </style>
+</head>
+<body>
+  <button class="show_cart_quantity"
+  onclick="
+  console.log(cartQuality);
+  ">
+    Show Quantity
+  </button>
+  <button class="add_to_cart"
+  onclick="
+  cartQuality++;
+  console.log(cartQuality);
+  ">
+    Add To Cart
+  </button>
+  <button class="add_two"
+  onclick="
+  cartQuality += 2;
+  console.log(cartQuality);
+  ">
+    Add +2
+  </button>
+  <button class="add_three"
+  onclick="
+  cartQuality += 3;
+  console.log(cartQuality);
+  ">
+    Add +3
+  </button>
+  <button class="reset"
+  onclick="
+  cartQuality = 0;
+  console.log('The quantity is reset')
+  console.log(`Now the quantity is ${cartQuality}`)
+  ">
+    Reset
+  </button>
+<script>
+  alert('Open Console to see the output: ')
+  let cartQuality = 0;
+</script>
+</body>
+</html>

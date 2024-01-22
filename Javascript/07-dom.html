@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>Hello</button>
+  <button class="another-button">Another Button</button>
+  <script>
+    // DOM Document Object Model is a built-in object
+    // DOM is directly connected to webpage so we can manupulate any element inside a web page
+    // For example let's change the wepage title to DOM to madara
+
+    document.title = 'Madara';
+    // You can see the change in the webpage title
+    
+    // Now let us see how innerHTML works
+    // document.body.innerHTML = 'Hii BSDK';
+    // As you can notice in the webpage everything in the webpage is deleted and converted to Hii BSDK
+
+    // Now let us see how to get a perticular element from HTML to javaScript
+    // there is a method called document.querySelector() to select a perticular element from the HTML (first element)
+    // for example if you type button you will get first button. If you type input you will get first input like that
+    // Let us get the button Hello from the HTML using this method
+
+    console.log(document.querySelector('button'));
+
+    // Every HTML has a object called innerHTML so we can use this object to manupulate the element
+    
+    document.querySelector('button').innerHTML = 'Changed';
+
+    // As we learned in the object concept every object can be taken out and can be stored in a variable 
+
+    let buttonElem = document.querySelector('button').innerHTML;
+    console.log('We stored a HTML element into a variable in javaScript :')
+    console.log(buttonElem);
+
+    // Suppose if there is a multiple button... Then how will you get the second button
+    // we will use class to distinguish between element
+    // Because we are using class we use dot(.) before the name
+
+    let anotherButtonElem = document.querySelector('.another-button');
+    console.log(anotherButtonElem);
+
+
+  </script>
+</body>
+</html>

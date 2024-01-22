@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parameter Function</title>
+</head>
+<body>
+  <script>
+    function calculateTax(cost, taxPercent=0.1){ //assigning default value for taxPercent to tackle NaN Problem
+      console.log(cost*taxPercent);
+    }
+    calculateTax(200,0.3);
+    calculateTax(500) //the taxPercent for this value will be 0.1 as default
+  </script>
+</body>
+</html>

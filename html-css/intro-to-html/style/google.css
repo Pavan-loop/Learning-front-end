@@ -1,0 +1,38 @@
+.mainn{
+  text-align: center;
+
+}
+.image{
+  margin-top: 100px;
+}
+img{
+  width: 300px;
+}
+.search-bar{
+  margin-top: 10px;
+}
+.search-barr{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  padding-left: 20px;
+  padding-right: 300px;
+  width: 300px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.20);
+  border-radius: 50px;
+  outline: none;
+}
+.buttons{
+  margin-top: 40px;
+}
+.search,
+.lucky{
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}

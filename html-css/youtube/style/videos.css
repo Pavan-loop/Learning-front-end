@@ -1,0 +1,39 @@
+.video-section{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.thumbnail-image{
+  width: 100%;
+}
+.video-info{
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: 40px 1fr;
+}
+.profile-img{
+  width: 100%;
+  border-radius: 50px;
+}
+.title{
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+}
+.channel-name,
+.stats{
+  margin-left: 10px;
+  font-size: 13px;
+  color: gray;
+}
+.channel-name{
+  margin-top: 10px;
+}
+.stats{
+  margin-top: 5px;
+}
+
+

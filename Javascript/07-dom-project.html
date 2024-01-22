@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Project</title>
+</head>
+<body>
+  <p>Youtube Subscribe Botton</p>
+  <button class="Subscribe-button" onclick="toSubscribe()">Subscribe</button>
+  <p>calculating the tax</p>
+  <input placeholder="calculate number" onkeydown="
+    keyListen(event)
+  ">
+  <button onclick="calculateTax()">calculate</button>
+</body>
+<script>
+  // there are many types of listners for example: onclick = ""; in html
+  // onkeydown = ""
+  // this will listen all the keystrocks typed in the input tag
+  function keyListen(event){
+    if(event.key === 'Enter'){
+      calculateTax();
+    }
+  }
+
+  function calculateTax(){
+    // Every querySelector will take the input in string 
+    // So to do arithmetic operation on this values are no possible
+    // We need to convert this string into number manually using the function Number()
+    inputEle = Number(document.querySelector('input').value);
+    if (inputEle < 40){
+      inputEle += 10;
+    }
+    console.log(inputEle);
+    
+  }
+
+  function toSubscribe(){
+    buttonEle = document.querySelector('.Subscribe-button').innerText;
+    if (buttonEle === 'Subscribe'){
+        document.querySelector('.Subscribe-button').innerHTML = 'Subscribed';
+    }else if (buttonEle === 'Subscribed'){
+        document.querySelector('.Subscribe-button').innerHTML = 'Subscribe';
+    }
+  }
+
+</script>
+</html>

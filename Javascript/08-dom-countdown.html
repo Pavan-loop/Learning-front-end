@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  #value{
+    font-size: 100px;
+    font-family: sans-serif;
+  }
+</style>
+<body>
+  <div class="container">
+    <!--Using id to address the value-->
+    <div id="value">
+      10
+    </div>
+  </div>
+  <script>
+    // Always use id instead of class to extract the value.
+    var counter = document.getElementById('value');
+    // we are using innerHTML poperty of counter to assign the value to initialValue
+    // innerHTML property only work with getElementById property
+    var initialValue = counter.innerHTML;
+    // the setInterval funtion will run the code inside the funtion after 1 sec **notice it takes 1000 as another argument**
+    setInterval(function(){
+      // Here we are using ternary operator it works same as if else statement.
+      // because we have only one condition it is better to use ternary operator instead of if else statement.
+      initialValue = initialValue > 0 ? initialValue - 1 : 0;
+      // here we are altering the value.
+      counter.innerHTML = initialValue;
+      // 1000 is 1000 millisec which is 1 sec
+      console.log(counter.style.fontSize);
+      // This line of code is to alter the style element in css. 
+      counter.style.fontSize = initialValue * 100 + "px";
+
+    },1000)
+  </script>
+</body>
+</html>

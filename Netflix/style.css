@@ -1,0 +1,24 @@
+*{
+  margin: 0px;
+  font-family: 'Inter';
+}
+body{
+  background-color: #141414;
+}
+.shadow-property{
+  height: 200px;
+  box-shadow: 0px 60px 20px 0px rgba(0, 0, 0, 0.2) inset;
+}
+.main-box{
+  height: 450px;
+}
+.headding{
+  height: 100px;
+  display: grid;
+  place-items: center;
+}
+.headding-text{
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
