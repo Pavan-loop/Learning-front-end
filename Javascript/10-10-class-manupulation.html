@@ -20,6 +20,7 @@
       display: grid;
       grid-template-rows: 1fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 5fr;
       cursor: pointer;
+
     }
     .logo,
     .profile,
@@ -55,11 +56,24 @@
       margin-bottom: 30px;
       color: #fb474d;
     }
+    .adashboard i {
+      padding: 10px;
+    }
+    .adashboard{
+      border-radius: 5px;
+    }
+    .adashboard:hover{
+      background-color: #7F57F1;
+      color: #FFFFFF;
+    }
+    .change-color{
+      background-color: #7F57F1;
+    }
     
   </style>
 </head>
 <body>
-  <div class="sidebar">
+  <div class="sidebar" >
     <div class="logo"></div>
     <div class="profile"></div>
     <div class="search">
@@ -68,7 +82,9 @@
       </div>
     </div>
     <div class="dashboard">
-      <i class="fa-solid fa-chalkboard"></i>
+      <div class="adashboard">
+        <i class="fa-solid fa-chalkboard"></i>
+      </div>
     </div>
     <div class="product">
       <i class="fa-regular fa-file"></i>
@@ -111,7 +127,10 @@
     syntax: selectedElement.classList.add('Myclass');
     For example: selectedElement.classList.add('show');
   */
-
+var sidebar = document.querySelector('.sidebar')
+sidebar.addEventListener('click', function(){
+  sidebar.classList.toggle('change-color');
+})
 
 
 </script>
