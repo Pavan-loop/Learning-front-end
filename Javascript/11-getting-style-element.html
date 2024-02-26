@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input{
+      display: block;
+      margin: 10px;
+      padding: 10px 20px 10px 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <input type="text" id="Username" placeholder="Username">
+    <input type="password" id="Password" placeholder="Password">
+  </form>
+  <p class="edit"></p>
+</body>
+  <script>
+    var user = document.getElementById('Username');
+    var op = document.querySelector('.edit');
+    user.addEventListener('input', function(event){
+    var values = event.target.value;
+    op.innerHTML = values;
+    })
+    // There are two ways we can get Element style value:
+
+    /*
+    var selectedElement = getElementById('selector')/querySelector('selector');
+    
+    Inline Style:
+    Syntax: selectedElement.style.{inline-style-property};
+    For example: selectedElement.style.width
+
+    CSS File:
+    Syntax: window.getComputedStyle(selectedElement).{style-property-name}
+    For eg: window.getComputedStyle(selectedelement).width
+    */
+  </script>
+</html>
