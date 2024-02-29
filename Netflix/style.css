@@ -1,6 +1,7 @@
 *{
   margin: 0px;
   font-family: 'Inter';
+  color: white;
 }
 body{
   background-color: #141414;
@@ -21,4 +22,17 @@ body{
   color: white;
   font-size: 50px;
   font-weight: bold;
+}
+.accounts{
+  border: 1px solid white;
+  height: 200px;
+  display: flex;
+}
+.account{
+  border: 1px solid white;
+  width: 150px;
+}
+.account-profile{
+  border: 1px solid white;
+  height: 150px;
 }
